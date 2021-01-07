@@ -38,6 +38,15 @@ class Manager < Employee
       index = index + 1
     end
   end
+
+  def fire_all_employees
+    puts "fire_all_employees start"
+    index = 0
+    while index < @employees.length
+      @employees[index].active = false
+      index = index + 1
+    end
+  end
 end
 
 employee1 = Employee.new({ first_name: "Majora", last_name: "Carter", salary: 80000, active: true })
@@ -59,3 +68,6 @@ manager.give_all_raises
 
 employee1.print_info
 employee2.print_info
+
+manager.fire_all_employees
+pp manager
